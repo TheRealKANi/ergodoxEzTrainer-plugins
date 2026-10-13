@@ -1,14 +1,15 @@
-# An example overlay: counts the keys you press and shows a small badge in the corner.
-# Copy the folder, change the id, and start from here. See PLUGIN-API.md.
+# A small overlay: counts the keys you were asked to press and shows the number in a corner.
+# Also the test plugin for this repository: add the repo, trust the key, install it.
 
 [plugin]
-id = "hello-overlay"
+id = "keystroke-counter"
 name = "Keystroke counter"
 version = "1.0.0"
 api = "0"
 provides = ["overlay"]
-description = "An example plugin: counts the characters you type in this session."
-author = "Your Name"
+description = "Counts the keys you were asked to press in this session."
+author = "TheRealKANi"
+homepage = "https://github.com/TheRealKANi/ergodoxEzTrainer-plugins"
 license = "GPL-3.0-or-later"
 icon = "star"
 entry = "main.rhai"

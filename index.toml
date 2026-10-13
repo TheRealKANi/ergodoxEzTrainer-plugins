@@ -1,0 +1,13 @@
+# Written by ergodoxEzTrainer plugin index. Sign: minisign -Sm index.toml
+
+[[plugin]]
+id = "keystroke-counter"
+name = "Keystroke counter"
+version = "1.0.0"
+api = "0"
+description = "Counts the keys you were asked to press in this session."
+provides = ["overlay"]
+permissions = []
+author = "TheRealKANi"
+tags = []
+file = "plugins/keystroke-counter-1.0.0.zip"

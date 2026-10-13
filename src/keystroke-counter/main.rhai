@@ -1,5 +1,5 @@
-// Keystroke counter: an example overlay for ergodoxEzTrainer.
-// SPDX-License-Identifier: GPL-3.0-or-later
+// Keystroke counter: an overlay for ergodoxEzTrainer.
+// Copyright (C) 2026 TheRealKANi · SPDX-License-Identifier: GPL-3.0-or-later
 
 fn init() {
     this.count = 0;

@@ -2,6 +2,6 @@
 # adds the repository, and trusts only zips and index.toml signed with this key.
 
 [repo]
-name = "Your plugins"
-description = "Plugins for ergodoxEzTrainer"
-public_key = "PASTE THE SECOND LINE OF minisign.pub HERE"
+name = "TheRealKANi's plugins"
+description = "Plugins for ergodoxEzTrainer, signed by TheRealKANi."
+public_key = "RWTMQYaXZsPvVs4gI8PeDIPEJEUt/IqL+NwMo6mC/EP+hCkblyx2tp6D"

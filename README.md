@@ -1,24 +1,45 @@
-# ergodoxEzTrainer plugin repository (template)
+# ergodoxEzTrainer plugins
 
-A template for a repository of signed plugins for
-[ergodoxEzTrainer](https://github.com/TheRealKANi). Copy it, put your own key in, and replace
-the example plugin with yours.
+Signed plugins for [ergodoxEzTrainer](https://github.com/TheRealKANi/ergodoxEzTrainer), the trainer for new
+keyboard layouts on the ZSA ErgoDox EZ.
 
-## Use it (for your users)
+## Use it
 
-In ergodoxEzTrainer: **Settings → Plugins → Repos → Add repo** with this repository's URL. The
-program fetches it with `git`, shows the fingerprint of its signing key, and installs only
-plugins signed with that key. Publish the fingerprint here so users can compare:
+In ergodoxEzTrainer: **Settings → Plugins → Repos → Add repo** with
+
+```
+https://github.com/TheRealKANi/ergodoxEzTrainer-plugins
+```
+
+The program fetches the repository with `git` and shows the fingerprint of its signing key.
+Trust it only if it matches:
 
 | Key | Fingerprint |
 |---|---|
-| your name | `XXXX XXXX XXXX XXXX` |
+| TheRealKANi | `56EF C366 9786 41CC` |
+
+The program then installs only plugins signed with that key, and asks again with a warning if
+the repository ever presents another key. The plugins are under **Browse**.
 
 ## Plugins
 
 | Plugin | Kind | What it does |
 |---|---|---|
-| Keystroke counter (`hello-overlay`) | overlay | Example: counts the keys you were asked to press |
+| Keystroke counter (`keystroke-counter`) | overlay | Counts the keys you were asked to press in this session; a small first plugin to try the repository with |
+
+The trainer's own plugins (keyboard, courses, drill, warm-up, memory quiz, hands, Danish …)
+are built into the program and are not here.
+
+## Your own plugin repository
+
+Start from the template this repository began as:
+
+```sh
+git clone --branch template https://github.com/TheRealKANi/ergodoxEzTrainer-plugins my-plugins
+```
+
+Its README explains the key, `repo.toml` and `release.sh`. Writing plugins: see
+`PLUGIN-API.md` in ergodoxEzTrainer.
 
 ## Layout
 
@@ -31,19 +52,7 @@ src/<id>/               plugin sources
 release.sh              pack, index and sign
 ```
 
-## Set up (once)
-
-```sh
-minisign -G -p minisign.pub -s ~/.minisign/ergodoxEzTrainer.key
-```
-
-- Keep the secret key offline and out of every repository (`.gitignore` blocks `*.key`).
-- Put the second line of `minisign.pub` into `repo.toml` as `public_key`.
-- Put the key id (the end of the first line of `minisign.pub`, in groups of four) into the
-  fingerprint table above.
-- Change `name` and `description` in `repo.toml`, and the plugin table.
-
-## Release
+## Release (maintainer)
 
 Change a plugin under `src/`, raise its `version` in `plugin.toml`, then
 
@@ -51,26 +60,16 @@ Change a plugin under `src/`, raise its `version` in `plugin.toml`, then
 ./release.sh           # check, pack new versions, write index.toml, sign, verify
 ```
 
-and commit and push. The repository must hold a signed `index.toml` before anyone adds it.
-A released zip is never rebuilt; `release.sh` refuses if a plugin changed without a new
-version. `.gitattributes` keeps git from touching the bytes of signed files.
+and commit and push. A released zip is never rebuilt; `release.sh` refuses if a plugin
+changed without a new version.
 
-Writing plugins: see `PLUGIN-API.md` in ergodoxEzTrainer.
+## If the key is ever stolen
 
-## If the key is stolen
-
-Revoke it with the key itself, so every ergodoxEzTrainer that reads this repository switches
-it off for good:
-
-```sh
-echo 'revoke = ["KEYID"]' > revoked.toml
-minisign -S -s ~/.minisign/ergodoxEzTrainer.key -m revoked.toml
-```
-
-Commit and push `revoked.toml` and `revoked.toml.minisig`, then start over with a new key and
-a new repository.
+The key will be revoked with a signed `revoked.toml` in this repository. Every ergodoxEzTrainer
+that reads it then switches the key off for good, and a new repository with a new key will be
+announced here.
 
 ## Licence
 
-The template and the example are GPL-3.0-or-later ([`LICENSE`](LICENSE)). Your own plugins
-can use any licence compatible with how you distribute them.
+GPL-3.0-or-later, see [`LICENSE`](LICENSE), with the additional terms in ergodoxEzTrainer's
+`NOTICE.md`.
