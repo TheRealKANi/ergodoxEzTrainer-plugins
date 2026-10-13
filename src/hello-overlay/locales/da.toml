@@ -1,0 +1,9 @@
+# Danish for this plugin. The key is the English text.
+"Keystroke counter" = "Tastetæller"
+"An example plugin: counts the characters you type in this session." = "Et eksempel-plugin: tæller de tegn, du skriver i denne session."
+"Show the counter" = "Vis tælleren"
+"Corner" = "Hjørne"
+"Top left" = "Øverst til venstre"
+"Top right" = "Øverst til højre"
+"{0} keys to press so far" = "{0} taster indtil nu"
+"Reset" = "Nulstil"

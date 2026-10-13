@@ -1,0 +1,15 @@
+# Never commit a secret key
+*.key
+*.sec
+minisign.key
+.minisign/
+
+# Editors and systems
+*.swp
+*~
+.DS_Store
+.idea/
+.vscode/
+
+# Scratch
+/tmp/

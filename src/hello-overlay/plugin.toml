@@ -1,0 +1,31 @@
+# An example overlay: counts the keys you press and shows a small badge in the corner.
+# Copy the folder, change the id, and start from here. See PLUGIN-API.md.
+
+[plugin]
+id = "hello-overlay"
+name = "Keystroke counter"
+version = "1.0.0"
+api = "0"
+provides = ["overlay"]
+description = "An example plugin: counts the characters you type in this session."
+author = "Your Name"
+license = "GPL-3.0-or-later"
+icon = "star"
+entry = "main.rhai"
+layer = 50
+
+[[setting]]
+key = "show"
+type = "bool"
+default = true
+label = "Show the counter"
+
+[[setting]]
+key = "corner"
+type = "choice"
+default = "right"
+label = "Corner"
+options = [
+  { value = "left", label = "Top left" },
+  { value = "right", label = "Top right" },
+]

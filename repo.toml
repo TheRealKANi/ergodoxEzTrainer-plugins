@@ -1,0 +1,7 @@
+# The repository's identity. ergodoxEzTrainer shows the fingerprint of public_key when a user
+# adds the repository, and trusts only zips and index.toml signed with this key.
+
+[repo]
+name = "Your plugins"
+description = "Plugins for ergodoxEzTrainer"
+public_key = "PASTE THE SECOND LINE OF minisign.pub HERE"

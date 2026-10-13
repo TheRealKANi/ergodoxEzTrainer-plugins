@@ -1,0 +1,6 @@
+# Signed files must reach users byte for byte: no line-ending conversion.
+*.zip       binary
+*.minisig   -text
+*.pub       -text
+index.toml  -text
+revoked.toml -text
